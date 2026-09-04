@@ -16,7 +16,7 @@ apt-get install -y nginx curl ca-certificates tar
 TEMP_DIR="$(mktemp -d)"
 trap 'rm -rf "${TEMP_DIR}"' EXIT
 
-curl --fail --location --retry 3 --connect-timeout 15 +  "${REPOSITORY_ARCHIVE}" +  --output "${TEMP_DIR}/site.tar.gz"
+curl --fail --location --retry 3 --connect-timeout 15 "${REPOSITORY_ARCHIVE}" --output "${TEMP_DIR}/site.tar.gz"
 tar -xzf "${TEMP_DIR}/site.tar.gz" -C "${TEMP_DIR}"
 
 SOURCE_DIR="$(find "${TEMP_DIR}" -mindepth 1 -maxdepth 1 -type d -name 'kaikou-youdiandongxi-*' | head -n 1)"
@@ -72,4 +72,3 @@ fi
 echo
 echo "网站已部署完成。请先使用服务器公网 IP 访问测试，再修改域名 DNS。"
 echo "网站目录：${SITE_ROOT}"
-
