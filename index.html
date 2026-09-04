@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111a17">
+  <meta name="description" content="开口有点东西：抽个话题，练练表达。用即兴表达和深度研究，让每一次开口都更从容。">
+  <title>开口有点东西 · 即兴表达练习</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23131d19'/%3E%3Cpath d='M17 16h30a5 5 0 0 1 5 5v20a5 5 0 0 1-5 5H29L17 54v-8a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5Z' fill='none' stroke='%23d59265' stroke-width='4'/%3E%3Cpath d='M23 27h18M23 35h12' stroke='%23f1e7d6' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <div class="page" id="page">
+    <header class="brand">
+      <a class="brand-name" href="./" aria-label="开口有点东西首页">开口有点东西</a>
+      <div class="brand-subtitle"><span>抽个话题，练练表达。</span> <a class="edition profile-link" id="douyin-profile" href="https://v.douyin.com/81WJkQXFnyM/" target="_blank" rel="noopener noreferrer" aria-label="有点东西的抖音主页（新窗口打开）" title="打开有点东西的抖音主页"><svg class="douyin-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25f4ee" transform="translate(-.7,-.4)" d="M14 3h3c.4 2.3 1.8 3.7 4 4v3a8.4 8.4 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z"/><path fill="#fe2c55" transform="translate(.7,.5)" d="M14 3h3c.4 2.3 1.8 3.7 4 4v3a8.4 8.4 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z"/><path fill="currentColor" d="M14 3h3c.4 2.3 1.8 3.7 4 4v3a8.4 8.4 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z"/></svg><span>有点东西</span></a></div>
+    </header>
+
+    <main class="stage">
+      <section class="controls" aria-label="练习选项">
+        <div class="mode-switch" role="tablist" aria-label="练习模式">
+          <span class="mode-thumb" aria-hidden="true"></span>
+          <button class="mode-option active" id="mode-quick" role="tab" aria-selected="true" aria-controls="practice-panel" data-mode="quick"><span aria-hidden="true">✳</span> 即兴表达</button>
+          <button class="mode-option" id="mode-research" role="tab" aria-selected="false" aria-controls="practice-panel" data-mode="research" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg> 深度研究</button>
+        </div>
+        <p id="mode-description" class="mode-description">不必字斟句酌，练习把想法说出口。</p>
+        <div class="category-select" id="category-wrap">
+          <label class="sr-only" for="category">话题分类</label>
+          <span id="category-icon" aria-hidden="true">✦</span>
+          <select id="category"></select>
+          <svg class="select-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+        </div>
+        <p class="research-note" id="research-note" hidden><span aria-hidden="true">◷</span> 先探索一个问题，再分享你的见解</p>
+      </section>
+
+      <section class="practice-panel" id="practice-panel" role="tabpanel" aria-labelledby="mode-quick">
+        <div class="topic-area" id="topic-area">
+          <p class="eyebrow" id="topic-status"><span class="status-dot"></span> 灵感就绪</p>
+          <h1 class="topic" id="topic">如果时间可以慢下来</h1>
+          <p class="topic-hint" id="topic-hint">一个话题，一点好奇心，一次新的表达。</p>
+        </div>
+        <section class="inline-timer" id="timer-panel" aria-labelledby="timer-title" hidden>
+          <header class="timer-heading">
+            <div><p class="eyebrow" id="timer-phase">01 / 准备</p><h2 id="timer-title">点击开始准备</h2></div>
+            <button class="icon-button" id="timer-close" aria-label="关闭本次练习" title="关闭本次练习">×</button>
+          </header>
+          <div class="timer-readout"><span id="timer-digits" role="timer" aria-label="待开始的准备时长">10:00</span><span id="timer-caption">尚未开始计时</span></div>
+          <div class="timer-progress" id="timer-ring" aria-hidden="true"></div>
+          <p class="timer-message" id="timer-message" aria-live="polite">先看一看话题，点击下方按钮后开始准备。</p>
+          <ol class="speech-steps" id="speech-steps" aria-label="表达结构提示" hidden><li><span>01</span> 是什么</li><li><span>02</span> 为什么</li><li><span>03</span> 然后呢</li></ol>
+          <div class="timer-actions"><button class="button secondary" id="pause" hidden>暂停</button><button class="button primary" id="phase-next">开始 10 分钟准备</button><button class="button primary" id="try-again" hidden>再表达一次</button></div>
+        </section>
+
+        <div class="actions">
+          <button id="spin" class="button primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3c4 0 6 10 10 10h3M17 14l3 3-3 3M4 17h3c1.6 0 2.7-1.5 3.8-3.4M13.2 10.4C14.3 8.5 15.4 7 17 7h3M17 4l3 3-3 3"/></svg><span>抽一个话题</span></button>
+          <button id="start" class="button secondary" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9 2h6M12 2v3"/></svg><span>抽题后点击开始准备</span></button>
+          <button id="settings-open" class="icon-button" aria-label="计时与声音设置" title="计时与声音设置"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 3-.7 2.2-2 .9-2.1-.6-2 3.5 1.5 1.6v2.8L3.2 15l2 3.5 2.1-.6 2 .9.7 2.2h4l.7-2.2 2-.9 2.1.6 2-3.5-1.5-1.6v-2.8L20.8 9l-2-3.5-2.1.6-2-.9L14 3z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+        <p class="keyboard-hint"><kbd>空格</kbd> 抽题 <span>·</span> <kbd>Enter</kbd> <span id="enter-hint">开始准备</span></p>
+      </section>
+
+      <section class="guide" aria-label="表达小提示">
+        <button class="guide-toggle" id="guide-toggle" aria-expanded="false" aria-controls="guide-content"><span class="guide-line"></span><span>开口之前，一点小提示</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg><span class="guide-line"></span></button>
+        <div id="guide-content" class="guide-content" hidden>
+          <div><span class="step-number">01</span><h2>是什么</h2><p>用自己的话，解释这个话题。</p></div>
+          <div><span class="step-number">02</span><h2>为什么</h2><p>说说你的观点，举一个例子。</p></div>
+          <div><span class="step-number">03</span><h2>然后呢</h2><p>联系生活，留下一个结论。</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span>让思考发生，让表达自然。</span><a href="https://www.unprompted.cool/" target="_blank" rel="noopener noreferrer">灵感来自 Unprompted <span aria-hidden="true">↗</span></a></footer>
+  </div>
+
+  <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <form method="dialog" class="settings-content">
+      <div class="dialog-heading"><div><p class="eyebrow">按自己的节奏</p><h2 id="settings-title">练习设置</h2></div><button class="icon-button close-button" aria-label="关闭设置" value="close">×</button></div>
+      <p class="settings-intro">开始准备前可调整时长，开始后本轮时长保持不变。</p>
+      <div class="duration-field"><div class="field-heading"><label for="speech-duration">表达时长</label><output id="speech-output" for="speech-duration">1 分钟</output></div><input id="speech-duration" type="range" min="1" max="10" step="1" value="1"><div class="range-ends"><span>1 分钟</span><span>10 分钟</span></div></div>
+      <div class="duration-field"><div class="field-heading"><label for="research-duration">准备时长 <small>点击后开始</small></label><output id="research-output" for="research-duration">10 分钟</output></div><input id="research-duration" type="range" min="1" max="60" step="1" value="10"><div class="range-ends"><span>1 分钟</span><span>60 分钟</span></div></div>
+      <label class="sound-field" for="sound"><span><strong>提示音</strong><small>抽题与计时结束时，轻轻提醒你</small></span><input id="sound" type="checkbox" role="switch" checked><span class="switch-visual" aria-hidden="true"></span></label>
+      <div class="sound-preview"><button type="button" class="button secondary" id="sound-test">试听提示音</button><p id="sound-status" role="status">手机无声时，请先试听，并检查媒体音量与静音开关。</p></div>
+      <p class="storage-note" id="storage-note">设置会自动保存在当前浏览器。</p>
+      <button class="button primary done-button" value="done">设置好了</button>
+    </form>
+  </dialog>
+
+  <div class="sr-only" id="announcer" aria-live="polite"></div>
+  <script src="topics.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111a17">
+  <meta name="description" content="开口有点东西：抽个话题，练练表达。用即兴表达和深度研究，让每一次开口都更从容。">
+  <title>开口有点东西 · 即兴表达练习</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23131d19'/%3E%3Cpath d='M17 16h30a5 5 0 0 1 5 5v20a5 5 0 0 1-5 5H29L17 54v-8a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5Z' fill='none' stroke='%23d59265' stroke-width='4'/%3E%3Cpath d='M23 27h18M23 35h12' stroke='%23f1e7d6' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+:root{--bg:#111a17;--ink:#f1e7d6;--muted:#a8aaa0;--accent:#cd8a5c;--accent-bright:#e6a373;--line:rgba(239,232,214,.16);--research:#8bbeb8;--body:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;--display:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",SimSun,serif;color-scheme:dark;font-family:var(--body);font-synthesis:none;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box}body{margin:0;min-width:280px}button,a,input,select{-webkit-tap-highlight-color:transparent}button,input,select{font:inherit}button{cursor:pointer}button,a,input,select{touch-action:manipulation}button{color:inherit}a{color:inherit;text-decoration:none}button:disabled{cursor:not-allowed}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent-bright);outline-offset:5px}svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}[hidden]{display:none!important}::selection{background:#cd8a5c55}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.atmosphere{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 9% 7%,#89644342,transparent 48%),radial-gradient(ellipse at 94% 20%,#36665740,transparent 49%),radial-gradient(ellipse at 50% 116%,#29536644,transparent 51%),linear-gradient(165deg,#1b231e,#101815 61%,#10191b);pointer-events:none}.atmosphere:after{content:"";position:absolute;inset:0;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.16' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+.page{min-height:100svh;display:flex;flex-direction:column;align-items:center;padding:42px 24px 25px}.brand{text-align:center;animation:rise .65s both}.brand-name{font-family:var(--display);font-size:38px;line-height:1.3;letter-spacing:2px;font-weight:500}.brand-subtitle{margin-top:11px;color:var(--muted);font-size:11px;letter-spacing:1px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px}.edition{font-size:10px;letter-spacing:1px;border:1px solid var(--line);border-radius:5px;padding:3px 6px;color:#b9bbae;background:#ffffff03}.stage{width:min(780px,100%);text-align:center;margin-top:68px;animation:rise .8s .08s both}.controls{display:flex;align-items:center;flex-direction:column}.mode-switch{position:relative;display:flex;padding:5px;border:1px solid var(--line);border-radius:40px;background:#f1e7d607;width:330px;max-width:100%}.mode-thumb{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:30px;background:var(--accent);box-shadow:0 3px 14px #cd8a5c1c;transition:transform .32s cubic-bezier(.2,.8,.2,1),background .25s}.mode-option{position:relative;width:50%;border:0;border-radius:30px;background:transparent;padding:13px 14px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:9px;color:#a9aca0;transition:color .2s}.mode-option span{font-size:19px;line-height:20px}.mode-option svg{width:17px;height:17px}.mode-option.active{color:#231c15}.mode-option:disabled{opacity:.65}.mode-description{font-size:12px;line-height:1.7;color:var(--muted);margin:17px 0 19px;letter-spacing:.4px}.category-select{width:264px;max-width:100%;position:relative;display:flex;align-items:center}.category-select>span{position:absolute;left:17px;color:var(--ink);font-size:16px;pointer-events:none}select{appearance:none;width:100%;padding:12px 42px 12px 47px;color:#dcded1;border:1px solid var(--line);border-radius:24px;background:#eeecd406;font-size:12px;cursor:pointer;transition:background .2s}select:hover{background:#eeecd40b}select:disabled{opacity:.4}select option{background:#1b2721;color:var(--ink)}.select-chevron{position:absolute;right:16px;pointer-events:none;width:14px;height:14px;color:#9ea797}.research-note{height:43px;margin:0;display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;color:var(--research);letter-spacing:.4px}
+.topic-area{min-height:292px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:42px 0 30px}.eyebrow{color:var(--accent);font-size:10px;font-weight:500;letter-spacing:3px;margin:0 0 24px;display:flex;align-items:center;justify-content:center;gap:9px}.status-dot{width:4px;height:4px;border-radius:50%;background:currentColor;box-shadow:0 0 9px #d59c6655}.topic{font-family:var(--display);font-size:clamp(36px,5.1vw,64px);line-height:1.45;letter-spacing:2px;font-weight:500;margin:0;width:100%;height:126px;min-height:126px;display:flex;align-items:center;justify-content:center;max-width:100%;overflow-wrap:anywhere;text-wrap:balance;transition:opacity .13s ease,transform .13s ease;contain:layout paint}.topic.long{font-size:clamp(28px,4vw,47px);max-width:700px}.topic-hint{font-size:11px;color:#91998d;letter-spacing:1px;margin:20px 0 0;min-height:20px;line-height:1.7}.topic-area.spinning .topic{opacity:.68;will-change:transform,opacity;animation:shuffle-float .32s ease-in-out infinite alternate}.topic-area.landed .topic{animation:land .4s both}.actions{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px}.button{border:1px solid transparent;border-radius:30px;padding:14px 21px;font-size:12px;font-weight:500;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;transition:background .2s,transform .2s,box-shadow .2s,opacity .2s;white-space:nowrap;letter-spacing:.3px}.button svg{height:16px;width:16px}.primary{background:var(--accent);color:#251e17;box-shadow:0 6px 26px #cc8a5c1c}.primary:not(:disabled):hover{background:var(--accent-bright);box-shadow:0 7px 28px #cc8a5c35;transform:translateY(-2px)}.secondary{background:transparent;border-color:#e3ead42e;color:#d7dbcc}.secondary:not(:disabled):hover{background:#f1e7d60a;border-color:#e3ead455;transform:translateY(-2px)}.button:disabled{opacity:.32;box-shadow:none}.icon-button{display:grid;place-items:center;width:41px;height:41px;border:1px solid var(--line);border-radius:50%;background:#f1e7d606;color:#a7b0a0;flex-shrink:0;transition:background .2s,color .2s}.icon-button:not(:disabled):hover{background:#f1e7d611;color:var(--ink)}.icon-button svg{width:18px;height:18px}.icon-button:disabled{opacity:.3}.keyboard-hint{margin:20px 0 0;color:#a5aea080;font-size:10px;display:flex;gap:7px;align-items:center;justify-content:center;letter-spacing:.4px}.keyboard-hint>span{margin:0 4px}kbd{font:inherit;border:1px solid #a7b0a02d;border-radius:3px;padding:2px 5px;color:#abb5a68c;font-size:9px}
+.guide{width:min(494px,100%);margin:66px auto 40px}.guide-toggle{display:flex;gap:13px;width:100%;align-items:center;justify-content:center;background:none;border:0;font-size:10px;color:#97a091;letter-spacing:1px;padding:8px 0}.guide-toggle:hover{color:#ced4c4}.guide-line{height:1px;background:linear-gradient(90deg,transparent,#a7b0a02e);flex:1}.guide-line:last-child{transform:rotate(180deg)}.guide-toggle svg{width:13px;height:13px;transition:transform .2s}.guide-toggle[aria-expanded=true] svg{transform:rotate(180deg)}.guide-content{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:26px 0 5px;animation:rise .3s both}.guide-content>div{text-align:left}.step-number{font-family:Georgia,serif;font-size:12px;font-style:italic;color:var(--accent)}.guide-content h2{font-size:12px;font-weight:500;letter-spacing:1px;display:inline;margin-left:8px}.guide-content p{font-size:10px;line-height:1.9;color:#97a091;margin:10px 0 0}.footer{margin-top:auto;padding-top:28px;text-align:center;font-size:10px;letter-spacing:1px;color:#8f9c8c99;display:flex;flex-direction:column;gap:10px}.footer>a{font-size:9px;color:#8f9c8c88;letter-spacing:.4px}.footer>a:hover{color:#cbd5c2}
+dialog{color:var(--ink);border:1px solid #e3ead421;background:#19231eea;border-radius:23px;padding:0;max-width:calc(100% - 32px);box-shadow:0 30px 100px #0007;backdrop-filter:blur(25px)}dialog::backdrop{background:#07100dd6;backdrop-filter:blur(10px)}dialog[open]{animation:rise .25s both}.settings-dialog{width:430px;max-height:calc(100svh - 40px)}.settings-content{padding:30px}.dialog-heading{display:flex;align-items:center;justify-content:space-between}.dialog-heading .eyebrow{justify-content:flex-start;margin:0 0 10px;font-size:9px;letter-spacing:2px}.dialog-heading h2{font-family:var(--display);font-size:28px;font-weight:500;letter-spacing:2px;margin:0}.close-button{align-self:flex-start;font-size:23px;width:32px;height:32px;font-weight:300}.settings-intro{font-size:11px;color:var(--muted);margin:16px 0 30px}.duration-field{margin-bottom:28px}.field-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:12px}.field-heading small{font-size:9px;color:var(--muted);margin-left:7px}.field-heading output{color:var(--accent-bright);font-variant-numeric:tabular-nums}input[type=range]{appearance:none;width:100%;height:4px;background:linear-gradient(to right,var(--accent) var(--fill,0%),#344238 var(--fill,0%));border-radius:8px;cursor:pointer;margin:0;display:block}input[type=range]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;border-radius:50%;background:var(--accent-bright);box-shadow:0 0 0 4px #cd8a5c19}input[type=range]::-moz-range-thumb{width:15px;height:15px;border:0;border-radius:50%;background:var(--accent-bright)}.range-ends{display:flex;justify-content:space-between;color:#8d9b8a;font-size:9px;margin-top:12px}.sound-field{display:flex;align-items:center;justify-content:space-between;cursor:pointer;border-top:1px solid var(--line);padding-top:23px}.sound-field strong{font-size:12px;font-weight:500}.sound-field small{display:block;margin-top:8px;font-size:10px;color:var(--muted)}.sound-field input{position:absolute;opacity:0;width:1px;height:1px}.switch-visual{background:#3c4b3d;width:34px;height:20px;display:block;border-radius:20px;position:relative;transition:background .2s}.switch-visual:after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#d4dccd;left:3px;top:3px;transition:transform .2s}.sound-field input:checked+.switch-visual{background:var(--accent)}.sound-field input:checked+.switch-visual:after{transform:translateX(14px);background:#211c15}.sound-field input:focus-visible+.switch-visual{outline:2px solid var(--accent-bright);outline-offset:4px}.storage-note{font-size:9px;color:#8d9b8a;margin:25px 0 17px}.done-button{width:100%;min-height:44px}
+.inline-timer{--timer-accent:var(--research);width:min(430px,100%);margin:0 auto 24px;padding:22px 25px 23px;text-align:left;border:1px solid #a6c7b429;border-radius:19px;background:#d2ead806;animation:rise .35s both}.timer-heading{display:flex;align-items:center;justify-content:space-between}.timer-heading .eyebrow{justify-content:flex-start;font-size:9px;letter-spacing:2px;color:var(--timer-accent);margin:0 0 7px}.timer-heading h2{font-size:13px;font-weight:500;letter-spacing:1px;margin:0}.timer-heading .icon-button{width:30px;height:30px;font-size:21px;font-weight:300}.timer-readout{display:flex;flex-direction:column;align-items:center;margin:18px 0 20px}#timer-digits{color:var(--timer-accent);font-family:Arial,"Helvetica Neue",var(--body);font-size:57px;font-weight:500;letter-spacing:0;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;white-space:nowrap;line-height:1.15}#timer-caption{font-size:10px;letter-spacing:1px;color:var(--muted);margin-top:12px}.timer-progress{--progress:0;height:3px;border-radius:10px;background:#d9e8d714;overflow:hidden}.timer-progress:after{content:"";display:block;width:100%;height:100%;background:var(--timer-accent);transform-origin:left;transform:scaleX(var(--progress));transition:transform .1s linear}.timer-message{text-align:center;font-size:10px;color:#abb9a5;line-height:1.8;margin:13px 0 17px}.timer-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}.timer-actions .button{min-height:38px;padding:10px 16px;font-size:10px}.timer-actions .primary{background:var(--timer-accent)}.timer-actions .primary:hover{filter:brightness(1.12)}.speech-steps{display:flex;gap:8px;list-style:none;margin:0 0 18px;padding:0}.speech-steps li{flex:1;text-align:center;padding:9px 4px;border:1px solid var(--line);border-radius:7px;font-size:10px;color:#8b9a89;transition:background .3s,color .3s,border-color .3s}.speech-steps li span{font-family:Georgia,serif;font-size:9px;margin-right:4px;opacity:.6}.speech-steps li.current{color:#d5b48e;border-color:#d0925e55;background:#d0925e12}.speech-steps li.completed{color:#aac5a3;border-color:#78a36744;background:#78a3670b}.inline-timer[data-phase=speech]{--timer-accent:var(--accent-bright)}.inline-timer[data-phase=done]{--timer-accent:#bad0ae}.practice-panel.has-timer .topic-area{min-height:205px;padding:32px 0 24px}.stage:has(.has-timer)+.footer{padding-top:14px}.stage:has(.has-timer) .guide{margin-top:35px;margin-bottom:24px}body[data-mode=research] .mode-thumb{transform:translateX(100%);background:var(--research)}body[data-mode=research] #topic-status{color:var(--research)}body[data-mode=research] .topic{font-size:clamp(28px,3.7vw,43px);line-height:1.4;letter-spacing:1.2px;max-width:700px}
+@media(max-width:600px){.inline-timer{padding:19px 18px 20px;margin-bottom:23px}.practice-panel.has-timer .topic-area{min-height:190px;padding:28px 0 22px}#timer-digits{font-size:51px}.timer-readout{margin:17px 0}.timer-actions{gap:7px}.timer-actions .button{padding:10px 13px}.timer-message{font-size:9px}.timer-heading h2{font-size:12px}}
+
+.edition.profile-link{display:inline-flex;align-items:center;gap:5px;padding:4px 8px 4px 6px;border-radius:999px;color:#deded2;line-height:1.4;letter-spacing:.7px;background:#ffffff05;transition:color .2s,background .2s,border-color .2s}.profile-link .douyin-icon{width:13px;height:13px;stroke:none;overflow:visible}.profile-link[href]:hover{color:var(--ink);border-color:#cd8a5c80;background:#cd8a5c14}
+@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}@keyframes land{from{opacity:.25;transform:translateY(6px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes shuffle-float{from{transform:translate3d(0,2px,0) scale(.992)}to{transform:translate3d(0,-2px,0) scale(1)}}
+@media(min-height:950px){.page{padding-top:54px}.stage{margin-top:84px}.topic-area{min-height:286px}.guide{margin-top:80px}}
+@media(max-width:600px){.page{padding:32px 22px 23px}.brand-name{font-size:32px}.brand-subtitle{font-size:10px}.stage{margin-top:48px}.mode-switch{width:302px}.mode-option{font-size:12px;padding:12px 10px}.mode-description{font-size:11px;margin:17px 0}.category-select{width:242px}.topic-area{min-height:250px;padding:35px 0 30px}.topic{font-size:clamp(31px,8.8vw,48px);letter-spacing:1px;max-width:11em;height:104px;min-height:104px}.topic.long{font-size:30px}body[data-mode=research] .topic{font-size:29px;line-height:1.4;letter-spacing:.5px}.eyebrow{font-size:9px;letter-spacing:2px;margin-bottom:23px}.topic-hint{font-size:10px;letter-spacing:.2px;max-width:29em}.actions{gap:8px;margin-top:5px}.button{font-size:11px;padding:13px 15px;gap:7px;min-height:45px}.actions>.icon-button{height:37px;width:37px}.keyboard-hint{display:none}.guide{margin:46px auto 32px}.guide-toggle{font-size:9px;gap:8px}.guide-content{gap:12px}.guide-content h2{font-size:11px;margin-left:5px}.guide-content p{font-size:9px}.footer{padding-top:20px;font-size:9px}.footer a{font-size:8px}.timer-content{padding:46px 20px 24px}.timer-content h2{font-size:25px}.timer-ring{width:230px;height:230px}#timer-digits{font-size:51px}.timer-message{font-size:11px}.settings-content{padding:27px}.field-heading small{font-size:8px}}
+@media(max-width:360px){.page{padding-left:14px;padding-right:14px}.actions{gap:6px}.actions .button{padding:12px 11px;font-size:10px}.button svg{height:14px;width:14px}.topic.long{font-size:27px}.guide-content{grid-template-columns:1fr;gap:16px}.guide-content p{display:inline;margin-left:8px}.settings-content{padding:24px 20px}}
+.sound-preview{margin-top:20px}.sound-preview .button{min-height:36px;padding:8px 14px;font-size:11px}#sound-status{margin:10px 0 0;font-size:10px;line-height:1.8;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <div class="page" id="page">
+    <header class="brand">
+      <a class="brand-name" href="./" aria-label="开口有点东西首页">开口有点东西</a>
+      <div class="brand-subtitle"><span>抽个话题，练练表达。</span> <a class="edition profile-link" id="douyin-profile" href="https://v.douyin.com/81WJkQXFnyM/" target="_blank" rel="noopener noreferrer" aria-label="有点东西的抖音主页（新窗口打开）" title="打开有点东西的抖音主页"><svg class="douyin-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25f4ee" transform="translate(-.7,-.4)" d="M14 3h3c.4 2.3 1.8 3.7 4 4v3a8.4 8.4 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z"/><path fill="#fe2c55" transform="translate(.7,.5)" d="M14 3h3c.4 2.3 1.8 3.7 4 4v3a8.4 8.4 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z"/><path fill="currentColor" d="M14 3h3c.4 2.3 1.8 3.7 4 4v3a8.4 8.4 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z"/></svg><span>有点东西</span></a></div>
+    </header>
+
+    <main class="stage">
+      <section class="controls" aria-label="练习选项">
+        <div class="mode-switch" role="tablist" aria-label="练习模式">
+          <span class="mode-thumb" aria-hidden="true"></span>
+          <button class="mode-option active" id="mode-quick" role="tab" aria-selected="true" aria-controls="practice-panel" data-mode="quick"><span aria-hidden="true">✳</span> 即兴表达</button>
+          <button class="mode-option" id="mode-research" role="tab" aria-selected="false" aria-controls="practice-panel" data-mode="research" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg> 深度研究</button>
+        </div>
+        <p id="mode-description" class="mode-description">不必字斟句酌，练习把想法说出口。</p>
+        <div class="category-select" id="category-wrap">
+          <label class="sr-only" for="category">话题分类</label>
+          <span id="category-icon" aria-hidden="true">✦</span>
+          <select id="category"></select>
+          <svg class="select-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+        </div>
+        <p class="research-note" id="research-note" hidden><span aria-hidden="true">◷</span> 先探索一个问题，再分享你的见解</p>
+      </section>
+
+      <section class="practice-panel" id="practice-panel" role="tabpanel" aria-labelledby="mode-quick">
+        <div class="topic-area" id="topic-area">
+          <p class="eyebrow" id="topic-status"><span class="status-dot"></span> 灵感就绪</p>
+          <h1 class="topic" id="topic">如果时间可以慢下来</h1>
+          <p class="topic-hint" id="topic-hint">一个话题，一点好奇心，一次新的表达。</p>
+        </div>
+        <section class="inline-timer" id="timer-panel" aria-labelledby="timer-title" hidden>
+          <header class="timer-heading">
+            <div><p class="eyebrow" id="timer-phase">01 / 准备</p><h2 id="timer-title">点击开始准备</h2></div>
+            <button class="icon-button" id="timer-close" aria-label="关闭本次练习" title="关闭本次练习">×</button>
+          </header>
+          <div class="timer-readout"><span id="timer-digits" role="timer" aria-label="待开始的准备时长">10:00</span><span id="timer-caption">尚未开始计时</span></div>
+          <div class="timer-progress" id="timer-ring" aria-hidden="true"></div>
+          <p class="timer-message" id="timer-message" aria-live="polite">先看一看话题，点击下方按钮后开始准备。</p>
+          <ol class="speech-steps" id="speech-steps" aria-label="表达结构提示" hidden><li><span>01</span> 是什么</li><li><span>02</span> 为什么</li><li><span>03</span> 然后呢</li></ol>
+          <div class="timer-actions"><button class="button secondary" id="pause" hidden>暂停</button><button class="button primary" id="phase-next">开始 10 分钟准备</button><button class="button primary" id="try-again" hidden>再表达一次</button></div>
+        </section>
+
+        <div class="actions">
+          <button id="spin" class="button primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3c4 0 6 10 10 10h3M17 14l3 3-3 3M4 17h3c1.6 0 2.7-1.5 3.8-3.4M13.2 10.4C14.3 8.5 15.4 7 17 7h3M17 4l3 3-3 3"/></svg><span>抽一个话题</span></button>
+          <button id="start" class="button secondary" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9 2h6M12 2v3"/></svg><span>抽题后点击开始准备</span></button>
+          <button id="settings-open" class="icon-button" aria-label="计时与声音设置" title="计时与声音设置"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 3-.7 2.2-2 .9-2.1-.6-2 3.5 1.5 1.6v2.8L3.2 15l2 3.5 2.1-.6 2 .9.7 2.2h4l.7-2.2 2-.9 2.1.6 2-3.5-1.5-1.6v-2.8L20.8 9l-2-3.5-2.1.6-2-.9L14 3z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+        <p class="keyboard-hint"><kbd>空格</kbd> 抽题 <span>·</span> <kbd>Enter</kbd> <span id="enter-hint">开始准备</span></p>
+      </section>
+
+      <section class="guide" aria-label="表达小提示">
+        <button class="guide-toggle" id="guide-toggle" aria-expanded="false" aria-controls="guide-content"><span class="guide-line"></span><span>开口之前，一点小提示</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg><span class="guide-line"></span></button>
+        <div id="guide-content" class="guide-content" hidden>
+          <div><span class="step-number">01</span><h2>是什么</h2><p>用自己的话，解释这个话题。</p></div>
+          <div><span class="step-number">02</span><h2>为什么</h2><p>说说你的观点，举一个例子。</p></div>
+          <div><span class="step-number">03</span><h2>然后呢</h2><p>联系生活，留下一个结论。</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span>让思考发生，让表达自然。</span><a href="https://www.unprompted.cool/" target="_blank" rel="noopener noreferrer">灵感来自 Unprompted <span aria-hidden="true">↗</span></a></footer>
+  </div>
+
+  <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <form method="dialog" class="settings-content">
+      <div class="dialog-heading"><div><p class="eyebrow">按自己的节奏</p><h2 id="settings-title">练习设置</h2></div><button class="icon-button close-button" aria-label="关闭设置" value="close">×</button></div>
+      <p class="settings-intro">开始准备前可调整时长，开始后本轮时长保持不变。</p>
+      <div class="duration-field"><div class="field-heading"><label for="speech-duration">表达时长</label><output id="speech-output" for="speech-duration">1 分钟</output></div><input id="speech-duration" type="range" min="1" max="10" step="1" value="1"><div class="range-ends"><span>1 分钟</span><span>10 分钟</span></div></div>
+      <div class="duration-field"><div class="field-heading"><label for="research-duration">准备时长 <small>点击后开始</small></label><output id="research-output" for="research-duration">10 分钟</output></div><input id="research-duration" type="range" min="1" max="60" step="1" value="10"><div class="range-ends"><span>1 分钟</span><span>60 分钟</span></div></div>
+      <label class="sound-field" for="sound"><span><strong>提示音</strong><small>抽题与计时结束时，轻轻提醒你</small></span><input id="sound" type="checkbox" role="switch" checked><span class="switch-visual" aria-hidden="true"></span></label>
+      <div class="sound-preview"><button type="button" class="button secondary" id="sound-test">试听提示音</button><p id="sound-status" role="status">手机无声时，请先试听，并检查媒体音量与静音开关。</p></div>
+      <p class="storage-note" id="storage-note">设置会自动保存在当前浏览器。</p>
+      <button class="button primary done-button" value="done">设置好了</button>
+    </form>
+  </dialog>
+
+  <div class="sr-only" id="announcer" aria-live="polite"></div>
+  <script>
+'use strict';
+
+// 原创中文题库。每一题都是可以直接展开观点的概念词或短主题。
+const makeCategory = (id, name, icon, topics) => ({id, name, icon, topics});
+
+const TOPIC_CATEGORIES = [
+  makeCategory('general', '生活与日常', '✦', [
+    '时间管理','延迟满足','断舍离','生活仪式感','独处能力','消费降级','情绪价值','碎片时间','数字排毒','熟人社会',
+    '生活半径','信息焦虑','选择疲劳','怀旧心理','城市漫游','松弛感','早起文化','通勤困境','租房生活','极简主义',
+    '冲动消费','计划偏差','拖延习惯','睡前仪式','随手记录','生活复盘','习惯叠加','微小幸福','外卖依赖','共享生活',
+    '如果时间可以慢下来','一件让生活变好的小事','你想保留的一种仪式感','独处是一种能力吗','一顿饭的记忆','计划之外的惊喜','我们为什么喜欢怀旧','慢一点也能到达吗','给十年前的自己一句话','家附近值得停留的地方'
+  ]),
+  makeCategory('self', '自我与成长', '◈', [
+    '成长型思维','自我效能','冒名顶替综合征','舒适区效应','自我设限','逆商','心理复原力','完美主义','内在动机','自我接纳',
+    '边界意识','课题分离','身份认同','路径依赖','目标梯度效应','习得性无助','心流体验','自证预言','认知失调','能力陷阱',
+    '比较焦虑','年龄焦虑','容貌焦虑','成就焦虑','空杯心态','刻意练习','终身成长','意志力损耗','归因方式','反脆弱',
+    '勇敢是带着害怕往前走','如何与不完美的自己相处','一次改变你的失败','长大后才懂得的道理','什么时候应该说不','习惯如何塑造一个人','你的生活由谁定义','放弃也是一种选择吗','和自己比较的意义','一项想重新学起的技能'
+  ]),
+  makeCategory('relations', '关系与沟通', '♡', [
+    '同理心','非暴力沟通','情感账户','依恋类型','沟通漏斗','首因效应','近因效应','晕轮效应','投射效应','刻板印象',
+    '社交距离','熟人效应','镜像效应','情绪感染','积极倾听','有效反馈','沟通成本','关系边界','讨好型人格','冷暴力',
+    '情感绑架','信任危机','代沟','代际沟通','冲突管理','共同话题','弱关系','强关系','邓巴数字','六度分隔',
+    '真正的倾听是什么','朋友之间需要边界吗','如何表达不同意见','一次值得记住的道歉','熟悉的人为何更难沟通','陪伴需要做些什么','善意需要被看见吗','如何向陌生人介绍自己','好的问题胜过好的答案','亲密关系中的独立'
+  ]),
+  makeCategory('work', '职场与协作', '▧', [
+    '彼得原理','帕金森定律','墨菲定律','二八法则','木桶效应','鲶鱼效应','霍桑效应','蘑菇定律','隧道视野','职场倦怠',
+    '职场内卷','摸鱼文化','加班文化','向上管理','横向协作','授权管理','结果导向','过程管理','目标管理','优先级管理',
+    '时间颗粒度','会议效率','沟通闭环','职场信息差','责任归属','团队心理安全','团队信任','组织惯性','跳槽窗口','职业天花板',
+    '效率与忙碌的区别','什么样的会议值得参加','第一次带团队','如何提出有用的反馈','工作的意义从哪里来','把复杂的事说清楚','面对变化如何调整计划','一位好同事的特质','远程工作的得与失','专业能力之外的竞争力'
+  ]),
+  makeCategory('tech', '科技与人工智能', '⌘', [
+    '人工智能','大语言模型','算法偏见','信息茧房','回音室效应','数字鸿沟','隐私悖论','数据主权','数字永生','机器幻觉',
+    '深度伪造','自动驾驶伦理','技术性失业','人机协作','智能推荐','注意力争夺','数字身份','生物识别','云计算','边缘计算',
+    '量子计算','开源精神','平台垄断','网络安全','数据泄露','隐私计算','智能家居','机器人养老','脑机接口','虚拟现实',
+    '如果每个人都有智能助手','科技让我们更有耐心了吗','人类独有的创造力','把记忆交给手机之后','你希望被自动化的一件事','方便与隐私如何取舍','推荐算法了解你吗','数字生活中的断舍离','人工智能时代如何学习','技术应该为谁服务'
+  ]),
+  makeCategory('culture', '文化与阅读', '▤', [
+    '文化折扣','文化认同','文化挪用','文化自信','方言保护','非遗传承','国潮现象','经典重译','阅读碎片化','深度阅读',
+    '电子阅读','短视频叙事','饭圈文化','亚文化','梗文化','二创文化','同人创作','审美疲劳','审丑文化','流量密码',
+    '文学改编','影视翻拍','开放式结局','作者已死','读者共创','博物馆热','文化出海','跨文化传播','集体记忆','内容付费',
+    '一本书带来的改变','你会重读哪一段文字','方言里藏着的温度','经典为什么经得起时间','一部电影的另一种结局','传统如何走进日常','旅行是阅读世界吗','把一本书推荐给陌生人','作品需要标准答案吗','纸质书的不可替代之处'
+  ]),
+  makeCategory('society', '社会与观察', '◎', [
+    '羊群效应','破窗效应','旁观者效应','沉默螺旋','公地悲剧','邻避效应','马太效应','社会时钟','圈层文化','阶层固化',
+    '寒门贵子','城乡差距','教育公平','性别平等','人口老龄化','少子化','独居社会','空巢青年','陌生人社会','公共空间',
+    '城市更新','职住分离','潮汐通勤','无障碍环境','社区自治','灵活就业','平台用工','算法管理','代际公平','网络围观',
+    '城市里的人情味','便利背后的代价','公共空间属于谁','如何理解另一种生活','规则与灵活如何平衡','为什么小店值得被记住','陌生人的善意','网络热议与真实生活','什么让一座城市宜居','消费是否等于拥有'
+  ]),
+  makeCategory('ideas', '思辨与观点', '◇', [
+    '囚徒困境','电车难题','忒修斯之船','洞穴寓言','缸中之脑','黑天鹅事件','灰犀牛事件','蝴蝶效应','奥卡姆剃刀','罗素的茶壶',
+    '祖父悖论','薛定谔的猫','白马非马','休谟问题','经验主义','理性主义','功利主义','道义论','存在主义','虚无主义',
+    '自由意志','决定论','机会公平','结果公平','程序正义','多数人暴政','个人与集体','目的与手段','真相与立场','事实与观点',
+    '选择越多越自由吗','结果好就代表选择对吗','有用是唯一的标准吗','确定感从哪里来','我们能真正客观吗','热爱一定要变成工作吗','少即是多的边界','公平与相同的区别','无聊也有价值吗','如何判断一个好建议'
+  ]),
+  makeCategory('health', '运动与生活方式', '↗', [
+    '多巴胺陷阱','习惯回路','超量恢复','运动成瘾','睡眠债','昼夜节律','睡眠拖延','情绪性进食','暴食循环','身材焦虑',
+    '体重污名','久坐危害','碎片化运动','有氧运动','力量训练','运动损伤','过度训练','健身房社交','体能储备','健康焦虑',
+    '养生年轻化','轻断食','控糖饮食','饮食平衡','代餐消费','咖啡依赖','酒精社交','熬夜文化','午睡效率','呼吸练习',
+    '找到适合自己的运动','休息也是一种进步','如何让健康成为日常','散步时你在想什么','睡前的一小时','坚持与过度的边界','做饭带来的满足感','从小习惯开始改变','如何照顾低能量的自己','身体给你的提醒'
+  ]),
+  makeCategory('business', '创业与商业', '⌁', [
+    '长尾效应','规模效应','网络效应','飞轮效应','口红效应','锚定效应','稀缺效应','损失厌恶','禀赋效应','诱饵效应',
+    '峰终定律','宜家效应','凡勃伦效应','免费增值','订阅经济','共享经济','平台经济','体验经济','粉丝经济','情绪消费',
+    '悦己消费','反向消费','品牌溢价','私域流量','用户粘性','转换成本','最小可行产品','产品市场匹配','商业冷启动','第二增长曲线',
+    '解决一个真正的小问题','好的产品让人忘记技术','你愿意为怎样的服务付费','一家小店的长久之道','便宜一定划算吗','从使用者变成创造者','如何验证一个新想法','增长之外的目标','口碑从哪里开始','品牌可以让人信任吗'
+  ]),
+  makeCategory('imagination', '脑洞与想象', '☄', [
+    '平行宇宙','时间旅行','记忆移植','意识上传','永生社会','无现金世界','无人城市','海底城市','火星移民','月球基地',
+    '太空电梯','人工太阳','数字分身','虚拟伴侣','机器人公民','动物语言翻译','植物互联网','气味互联网','梦境共享','情绪可视化',
+    '记忆交易','时间银行','知识交换','天气定制','四天工作制','无考试学校','无货币社会','无国界世界','永昼城市','漂浮建筑',
+    '如果一天有二十五小时','给未来写一张明信片','开一家没有名字的店','为一种心情发明颜色','假如植物可以聊天','你想发明什么节日','带三样东西去月球','如果城市每周安静一天','让一段记忆变成博物馆','和一百岁的自己对话'
+  ]),
+  makeCategory('nature', '自然与远方', '♧', [
+    '碳足迹','生态足迹','绿色消费','漂绿现象','零废弃生活','循环利用','垃圾分类','食物里程','生物多样性','物种灭绝',
+    '外来物种','城市荒野','国家公园','生态旅游','过度旅游','无痕旅行','慢旅行','反向旅游','可持续旅行','自然教育',
+    '森林疗愈','荒野体验','露营经济','观鸟文化','宠物伦理','动物福利','野生动物保护','气候焦虑','极端天气','海洋塑料',
+    '一场雨改变了什么','旅行时要不要做攻略','在熟悉的地方重新出发','一棵树能教会我们什么','山与海你会选哪个','人与自然的距离','你心中的理想小镇','看一次日出的意义','旅行中的意外相遇','季节变化带来的心情'
+  ])
+];
+
+const RESEARCH_CATEGORIES = [
+  makeCategory('research-tech', '科技与人工智能', '⌘', [
+    '人工智能伦理','模型可解释性','训练数据版权','算法歧视治理','生成内容标识','人工智能监管','人工智能教育','智能医疗边界','自动驾驶责任','机器人照护伦理',
+    '深度伪造识别','网络隐私保护','个人数据定价','数据跨境流动','数字身份安全','生物信息保护','推荐系统责任','青少年屏幕使用','老年数字融入','平台内容审核',
+    '开源软件治理','科技巨头竞争','算力资源分配','芯片供应链','量子安全通信','智能城市风险','物联网安全','智能家居隐私','脑机接口伦理','虚拟现实社交',
+    '数字人版权','游戏沉迷治理','网络谣言传播','信息茧房突破','数字劳动权益','零工平台算法','人工智能如何改变我们学习的方式','推荐算法怎样影响我们的选择','一项新技术从出现到普及经历了什么','人工智能生成内容如何改变创作'
+  ]),
+  makeCategory('research-city', '城市与公共生活', '◎', [
+    '步行友好城市','十五分钟生活圈','城市公共交通','通勤时间公平','公共空间活力','儿童友好城市','老年友好社区','无障碍城市建设','城市夜间经济','地摊经济治理',
+    '街道商业生态','社区小店生存','旧城更新争议','历史街区保护','城市文化地标','租房权益保障','青年住房压力','保障性住房','城市人才争夺','人口收缩城市',
+    '超大城市治理','县城生活吸引力','城乡公共服务','返乡青年创业','社区邻里互助','志愿服务持续性','基层社区治理','公共图书馆转型','城市公园公平','口袋公园价值',
+    '共享单车治理','停车资源分配','城市内涝治理','海绵城市建设','生活垃圾减量','城市噪声治理','一座适合步行的城市需要什么','社区公共空间怎样促进人与人的连接','城市更新如何保留地方记忆','公共图书馆在数字时代的角色'
+  ]),
+  makeCategory('research-learning', '教育与认知', '◇', [
+    '学习科学','认知负荷','间隔效应','测试效应','交错学习','费曼学习法','元认知能力','知识迁移','深度学习能力','阅读理解培养',
+    '批判思维教育','媒介素养','人工智能素养','信息检索能力','学术诚信','论文代写治理','教育评价改革','应试教育','素质教育','个性化学习',
+    '分层教学','项目式学习','跨学科教育','职业教育认可','终身教育体系','成人学习动力','乡村教育资源','教育数字化','在线学习效果','校园手机管理',
+    '课外补习需求','家庭教育焦虑','教育资源内卷','高考志愿选择','大学专业冷热','学历贬值','注意力为什么会成为一种稀缺资源','终身学习需要哪些现实条件','如何让科学知识更容易被理解','教育中的标准化与个性化如何兼顾'
+  ]),
+  makeCategory('research-business', '职场与商业', '▧', [
+    '组织心理安全','混合办公效率','远程团队管理','工作生活边界','职场年龄歧视','女性职业发展','灵活用工保障','平台劳动关系','最低工资影响','薪酬透明制度',
+    '绩效考核偏差','员工激励机制','人才保留策略','企业文化形成','组织创新阻力','中小企业融资','初创企业生存','商业模式创新','用户需求验证','新产品冷启动',
+    '品牌信任建立','国货品牌崛起','消费理性回归','直播电商监管','短视频营销','社交电商信任','订阅服务疲劳','预付消费风险','会员体系设计','价格心理学',
+    '消费降级趋势','银发消费需求','青年消费观念','县域商业机会','夜间消费场景','本地生活平台','远程办公如何改变团队信任','为什么人们愿意为体验付费','一家小企业怎样建立长期信任','食物浪费可以从哪些环节减少'
+  ]),
+  makeCategory('research-culture', '文化与表达', '▤', [
+    '短视频语言','网络流行语','方言数字保存','非遗活态传承','传统文化创新','文化遗产修复','博物馆数字化','文物返还争议','公共文化服务','农村文化空间',
+    '城市文化品牌','地方文化认同','文化产品出海','跨文化误读','翻译与文化差异','网络文学出海','影视作品改编','经典作品年轻化','内容分级制度','创作者劳动权益',
+    '平台创作生态','人工智能创作权','数字艺术收藏','音乐版权保护','知识产权普及','盗版内容传播','粉丝文化治理','饭圈消费行为','网络社群认同','亚文化商业化',
+    '梗的传播机制','表情包文化','弹幕互动文化','播客内容兴起','有声阅读发展','实体书店转型','传统手艺怎样找到新的生存空间','为什么越来越多人开始记录生活','短视频如何影响叙事与表达','博物馆如何让历史与今天对话'
+  ]),
+  makeCategory('research-society', '社会与可持续', '♧', [
+    '人口老龄化应对','低生育率成因','独居人口增长','家庭结构变化','代际照护压力','养老服务体系','长期护理保险','青年婚育观念','性别角色分工','女性照护负担',
+    '男性气质变化','家庭暴力干预','儿童网络保护','未成年人隐私','校园欺凌治理','职场心理健康','社会孤独问题','心理服务普及','残障人士就业','无障碍信息服务',
+    '城乡收入差距','社会保障公平','新就业群体保障','收入分配差距','慈善透明度','公益项目评估','志愿服务激励','公共议题参与','网络舆论极化','谣言纠正机制',
+    '个人信息泄露','社区信任重建','公共卫生沟通','食品安全信任','气候变化适应','低碳生活激励','循环经济如何走进普通人的一天','数字产品如何照顾不同年龄的使用者','我们如何分辨信息与观点','无障碍设计为什么对每个人都有帮助'
+  ])
+];
+
+const RESEARCH_TOPICS = RESEARCH_CATEGORIES.flatMap(category => category.topics);
+
+</script>
+  <script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const preferenceKey = 'unprompted-zh:settings:v1';
+  const defaults = {speech:1,research:10,sound:true,category:'general',researchCategory:'research-tech',mode:'quick'};
+  let storageAvailable = true;
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(preferenceKey) || '{}') || {}; } catch { storageAvailable = false; }
+  const clampMinutes = (value,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.max(1,Math.min(max,Math.round(value))) : fallback;
+  const settings = {...defaults,speech:clampMinutes(saved.speech,10,1),research:clampMinutes(saved.research,60,10),sound:typeof saved.sound==='boolean'?saved.sound:true,category:TOPIC_CATEGORIES.some(c=>c.id===saved.category)?saved.category:'general',researchCategory:RESEARCH_CATEGORIES.some(c=>c.id===saved.researchCategory)?saved.researchCategory:'research-tech',mode:saved.mode==='research'?'research':'quick'};
+  const state = {mode:settings.mode,topic:'',selected:false,spinning:false,phase:'idle',paused:false,remaining:0,total:0,deadline:0,preparationMinutes:10,speechMinutes:1,interval:null,drawTimeout:null,bag:[],bagKey:''};
+  let audioContext;
+  let audioResumePromise=null;
+  function primeAudio() {
+    if(!settings.sound)return Promise.resolve(false);
+    try{
+      const Audio=window.AudioContext||window.webkitAudioContext;
+      if(!Audio)return Promise.resolve(false);
+      if(!audioContext||audioContext.state==='closed')audioContext=new Audio();
+      if(audioContext.state==='running')return Promise.resolve(true);
+      if(!audioResumePromise){
+        audioResumePromise=audioContext.resume()
+          .then(()=>audioContext.state==='running')
+          .catch(()=>false)
+          .finally(()=>{audioResumePromise=null});
+      }
+      return audioResumePromise;
+    }catch{return Promise.resolve(false);}
+  }
+  function persist() {
+    try { localStorage.setItem(preferenceKey,JSON.stringify(settings)); }
+    catch { storageAvailable = false; }
+    $('storage-note').textContent = storageAvailable ? '设置会自动保存在当前浏览器。' : '当前浏览器无法保存设置；本次练习仍可正常使用。';
+  }
+  function soundNow(kind='tick') {
+    if(!settings.sound||!audioContext||audioContext.state!=='running')return false;
+    const context=audioContext;
+    const notes=kind==='done'?[523.25,659.25,783.99]:kind==='land'?[523.25,659.25]:[440];
+    notes.forEach((frequency,index)=>{
+      const osc=context.createOscillator();const gain=context.createGain();
+      const start=context.currentTime+.02+index*.18;const duration=kind==='shuffle'||kind==='tick'?.07:.4;
+      osc.type='sine';osc.frequency.value=frequency;gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(kind==='shuffle'||kind==='tick'?.085:.16,start+.015);gain.gain.exponentialRampToValueAtTime(.001,start+duration);
+      osc.connect(gain);gain.connect(context.destination);osc.start(start);osc.stop(start+duration+.02);
+      osc.onended=()=>{osc.disconnect();gain.disconnect()};
+    });
+    return true;
+  }
+  async function tone(kind='tick') {
+    if (!settings.sound) return false;
+    try {
+      let timeout;
+      const ready=await Promise.race([primeAudio(),new Promise((_,reject)=>{timeout=setTimeout(()=>reject(new Error('Audio blocked')),2000);})]);
+      clearTimeout(timeout);
+      if(!settings.sound)return false;
+      if(!ready||!audioContext||audioContext.state!=='running')throw new Error('Audio blocked');
+      return soundNow(kind);
+    } catch {
+      $('sound-status').textContent='浏览器暂未允许播放声音，请点击“试听提示音”重试。';
+      return false;
+    }
+  }
+  for(const id of ['spin','start','pause','phase-next','try-again','sound-test']){
+    const control=$(id);
+    control.addEventListener('pointerdown',primeAudio,{passive:true});
+    control.addEventListener('touchstart',primeAudio,{passive:true});
+  }
+  function categories() {return state.mode==='research'?RESEARCH_CATEGORIES:TOPIC_CATEGORIES;}
+  function categorySetting() {return state.mode==='research'?'researchCategory':'category';}
+  function selectedCategory() {return categories().find(category=>category.id===settings[categorySetting()])||categories()[0];}
+  function populateCategories() {
+    const select=$('category');select.replaceChildren();
+    for(const category of categories()){
+      const option=document.createElement('option');option.value=category.id;option.textContent=category.name;select.append(option);
+    }
+    select.value=selectedCategory().id;
+    $('category-icon').textContent=selectedCategory().icon;
+    document.querySelector('label[for="category"]').textContent=state.mode==='research'?'深度研究分类':'即兴表达分类';
+  }
+  function pool() { return selectedCategory().topics; }
+  function shuffle(items) {
+    const result=[...items];
+    for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]]}
+    return result;
+  }
+  function nextTopic() {
+    const key=state.mode+':'+selectedCategory().id;
+    if(!state.bag.length||state.bagKey!==key){state.bag=shuffle(pool());state.bagKey=key;
+      if(state.bag.length>1&&state.bag[state.bag.length-1]===state.topic){[state.bag[0],state.bag[state.bag.length-1]]=[state.bag[state.bag.length-1],state.bag[0]];}
+    }
+    return state.bag.pop();
+  }
+  function setTopic(topic) {state.topic=topic;$('topic').textContent=topic;$('topic').classList.toggle('long',state.mode!=='research'&&topic.length>13);}
+  function status(text) {
+    $('topic-status').replaceChildren();const dot=document.createElement('span');dot.className='status-dot';$('topic-status').append(dot,document.createTextNode(text));
+  }
+  function updateButtons() {
+    $('spin').disabled=state.spinning;
+    $('start').disabled=state.spinning||!state.selected;
+    $('start').hidden=state.phase!=='idle';
+    $('settings-open').disabled=state.spinning;
+    $('category').disabled=state.spinning;
+    document.querySelectorAll('.mode-option').forEach(button=>button.disabled=state.spinning);
+    $('spin').querySelector('span').textContent=state.spinning?'灵感转动中…':state.selected?'再抽一个':'抽一个话题';
+    $('start').querySelector('span').textContent=state.selected?`重新开始 ${settings.research} 分钟准备`:'抽题后点击开始准备';
+    $('enter-hint').textContent=state.phase==='research'?'结束准备':state.phase==='ready'?'开始表达':state.phase==='speech'?'暂停 / 继续':state.phase==='done'?'再表达一次':'开始准备';
+  }
+  function updateMode() {
+    resetTimer();
+    document.body.dataset.mode=state.mode;
+    document.querySelectorAll('.mode-option').forEach(button=>{
+      const active=button.dataset.mode===state.mode;
+      button.classList.toggle('active',active);button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;
+    });
+    $('practice-panel').setAttribute('aria-labelledby','mode-'+state.mode);
+    $('mode-description').textContent=state.mode==='research'?'带着好奇去探索，再把理解说给世界听。':'不必字斟句酌，练习把想法说出口。';
+    $('category-wrap').hidden=false;$('research-note').hidden=true;populateCategories();
+    state.selected=false;status('灵感就绪');setTopic(pool()[0]);
+    $('topic-hint').textContent=state.mode==='research'?'查阅资料，梳理观点，再用自己的话讲出来。':'一个话题，一点好奇心，一次新的表达。';
+    $('topic-area').classList.remove('landed');updateButtons();
+  }
+  function switchMode(mode) { if(state.spinning||state.mode===mode)return;state.mode=mode;settings.mode=mode;persist();updateMode(); }
+  document.querySelectorAll('.mode-option').forEach(button=>{
+    button.addEventListener('click',()=>switchMode(button.dataset.mode));
+    button.addEventListener('keydown',event=>{
+      if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)||state.spinning)return;
+      event.preventDefault();const mode=event.key==='Home'?'quick':event.key==='End'?'research':state.mode==='quick'?'research':'quick';switchMode(mode);$('mode-'+mode).focus();
+    });
+  });
+  $('category').addEventListener('change',()=>{settings[categorySetting()]=$('category').value;persist();updateMode()});
+  function spin() {
+    if(state.spinning||$('settings-dialog').open)return;
+    resetTimer();
+    state.spinning=true;state.selected=false;updateButtons();status('正在寻找灵感');$('topic-area').classList.remove('landed');$('topic-area').classList.add('spinning');$('topic-hint').textContent='让一个意想不到的话题，打开思路。';
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const result=nextTopic();const items=pool();let frame=0;const previews=reduced?[]:shuffle(items.filter(item=>item!==result)).slice(0,6);
+    tone();
+    const draw=()=>{
+      if(frame>=previews.length){
+        setTopic(result);state.spinning=false;state.selected=true;status('你的表达话题');$('topic-area').classList.remove('spinning');$('topic-area').classList.add('landed');
+        $('topic-hint').textContent=state.mode==='research'?'从一个问题出发，形成你自己的观点。':'没有标准答案，说说你的理解就好。';
+        state.drawTimeout=null;prepareRound();$('announcer').textContent='抽到的话题：'+result+'。点击开始准备后才会计时。';tone('land');
+        requestAnimationFrame(()=>$('timer-panel').scrollIntoView({block:'nearest',behavior:reduced?'instant':'smooth'}));return;
+      }
+      setTopic(previews[frame]);soundNow('shuffle');frame++;state.drawTimeout=setTimeout(draw,95);
+    };draw();
+  }
+  $('spin').addEventListener('click',spin);
+  $('guide-toggle').addEventListener('click',()=>{const expanded=$('guide-toggle').getAttribute('aria-expanded')==='true';$('guide-toggle').setAttribute('aria-expanded',String(!expanded));$('guide-content').hidden=expanded;});
+
+  function updateSettingControls() {
+    for(const [key,max] of [['speech',10],['research',60]]){
+      const slider=$(key+'-duration');slider.value=settings[key];slider.style.setProperty('--fill',((settings[key]-1)/(max-1)*100)+'%');
+      $(key+'-output').textContent=settings[key]+' 分钟';slider.setAttribute('aria-valuetext',settings[key]+' 分钟');
+    }
+    $('sound').checked=settings.sound;$('sound-test').disabled=!settings.sound;updateButtons();
+    if(state.phase==='prepare-ready')prepareRound();
+  }
+  $('settings-open').addEventListener('click',()=>{updateSettingControls();$('settings-dialog').showModal()});
+  for(const [key,max] of [['speech',10],['research',60]])$(key+'-duration').addEventListener('input',event=>{settings[key]=clampMinutes(Number(event.target.value),max,defaults[key]);persist();updateSettingControls();});
+  $('sound').addEventListener('change',()=>{settings.sound=$('sound').checked;$('sound-test').disabled=!settings.sound;persist();if(settings.sound)tone('land');});
+  $('sound-test').addEventListener('click',async()=>{
+    $('sound-test').disabled=true;
+    const played=await tone('done');
+    if(played)$('sound-status').textContent='试听已播放。若没有听到，请调高媒体音量、关闭静音，或用系统浏览器打开。';
+    $('sound-test').disabled=!settings.sound;
+  });
+  $('settings-dialog').addEventListener('click',event=>{if(event.target!==$('settings-dialog'))return;const rect=event.target.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)event.target.close();});
+
+  function stopClock() {clearInterval(state.interval);state.interval=null;}
+  function startClock(deadline=Date.now()+state.remaining*1000) {stopClock();state.deadline=deadline;state.interval=setInterval(tick,100);}
+  function format(seconds) {const rounded=Math.max(0,Math.ceil(seconds));return `${String(Math.floor(rounded/60)).padStart(2,'0')}:${String(rounded%60).padStart(2,'0')}`;}
+  function renderSteps() {
+    const done=state.phase==='done';
+    const step=Math.min(2,Math.floor((1-state.remaining/state.total)*3));
+    Array.from($('speech-steps').children).forEach((item,index)=>{
+      item.classList.toggle('current',!done&&index===step);item.classList.toggle('completed',done||index<step);
+      if(!done&&index===step)item.setAttribute('aria-current','step');else item.removeAttribute('aria-current');
+    });
+  }
+  function renderTimer() {
+    const waiting=state.phase==='prepare-ready';const preparing=state.phase==='research';const ready=state.phase==='ready';const done=state.phase==='done';
+    $('timer-panel').hidden=false;$('practice-panel').classList.add('has-timer');$('timer-panel').dataset.phase=state.phase;
+    $('timer-phase').textContent=waiting||preparing?'01 / 准备':ready?'准备完成':done?'本次练习完成':'02 / 表达';
+    $('timer-title').textContent=waiting?'点击开始准备':preparing?'准备倒计时':ready?'准备好了，再开始':done?'说完了，就是进步':'表达倒计时';
+    $('timer-digits').textContent=format(ready?state.speechMinutes*60:state.remaining);$('timer-digits').setAttribute('aria-label',waiting?'待开始的准备时长':preparing?'准备剩余时间':ready?'待开始的表达时长':'表达剩余时间');
+    $('timer-ring').style.setProperty('--progress',String(done?1:waiting||ready?0:Math.max(0,Math.min(1,1-state.remaining/state.total))));
+    $('timer-caption').textContent=done?'给开口的自己一点掌声':waiting||ready?'尚未开始计时':state.paused?'已暂停，准备好了再继续':preparing?'整理思路，不用着急':'把你的想法说出来';
+    $('timer-message').textContent=done?'每一次表达，都是一点进步。':waiting?'先看一看话题，点击下方按钮后开始准备。':ready?'准备已结束，点击下方按钮后开始表达。':state.paused?'计时已暂停，点击继续即可恢复。':preparing?`准备结束后，由你点击开始 ${state.speechMinutes} 分钟表达。`:'从一个观点开始，用一个例子展开。';
+    $('speech-steps').hidden=waiting||preparing||ready;if(state.phase==='speech'||done)renderSteps();
+    $('pause').hidden=waiting||done||ready;$('pause').textContent=state.paused?'继续计时':'暂停';
+    $('phase-next').hidden=!(waiting||preparing||ready);$('phase-next').textContent=waiting?`开始 ${state.preparationMinutes} 分钟准备`:ready?`开始 ${state.speechMinutes} 分钟表达`:'结束准备';$('try-again').hidden=!done;
+    const closeLabel=preparing?'结束准备计时':waiting||done||ready?'关闭本次练习':'结束表达计时';
+    $('timer-close').setAttribute('aria-label',closeLabel);$('timer-close').title=closeLabel;
+    updateButtons();
+  }
+  function resetTimer() {
+    stopClock();state.phase='idle';state.paused=false;state.remaining=0;state.total=0;
+    $('timer-panel').hidden=true;$('practice-panel').classList.remove('has-timer');updateButtons();
+  }
+  function prepareRound() {
+    stopClock();state.phase='prepare-ready';state.paused=false;
+    state.preparationMinutes=settings.research;state.speechMinutes=settings.speech;
+    state.total=settings.research*60;state.remaining=state.total;state.deadline=0;
+    renderTimer();
+  }
+  function finishPhase() {
+    stopClock();state.remaining=0;state.paused=false;
+    if(state.phase==='research'){
+      finishPreparation();
+      return;
+    }
+    state.phase='done';renderTimer();tone('done');
+  }
+  function tick() {
+    if(state.paused||!['research','speech'].includes(state.phase))return;
+    state.remaining=Math.max(0,(state.deadline-Date.now())/1000);
+    if(state.remaining<=0){finishPhase();return;}
+    const digits=format(state.remaining);
+    if($('timer-digits').textContent!==digits){$('timer-digits').textContent=digits;renderSteps();}
+    $('timer-ring').style.setProperty('--progress',String(Math.max(0,Math.min(1,1-state.remaining/state.total))));
+  }
+  function beginPhase(phase) {
+    stopClock();
+    if(phase==='research'){state.preparationMinutes=settings.research;state.speechMinutes=settings.speech;}
+    else if(state.phase==='done'){state.speechMinutes=settings.speech;}
+    state.phase=phase;state.paused=false;state.total=(phase==='research'?state.preparationMinutes:state.speechMinutes)*60;
+    state.deadline=Date.now()+state.total*1000;state.remaining=state.total;
+    renderTimer();startClock(state.deadline);
+  }
+  function finishPreparation() {
+    if(state.phase!=='research')return;
+    stopClock();state.phase='ready';state.paused=false;state.remaining=0;
+    renderTimer();tone('done');
+  }
+  function startSpeech() {
+    if(state.phase!=='ready')return;
+    beginPhase('speech');$('pause').focus({preventScroll:true});tone('land');
+  }
+  function togglePause() {
+    if(!['research','speech'].includes(state.phase))return;
+    if(state.paused){state.paused=false;startClock();tone('land');}
+    else {tick();if(!['research','speech'].includes(state.phase))return;state.paused=true;stopClock();}
+    renderTimer();
+  }
+  function start() {
+    if(!state.selected||state.spinning||$('settings-dialog').open)return;
+    if(state.phase==='research'){finishPreparation();return;}
+    if(state.phase==='ready'){startSpeech();return;}
+    if(state.phase==='speech'){togglePause();return;}
+    beginPhase(state.phase==='done'?'speech':'research');tone('land');
+  }
+  $('start').addEventListener('click',start);
+  $('pause').addEventListener('click',togglePause);
+  $('phase-next').addEventListener('click',()=>{if(state.phase==='prepare-ready')start();else if(state.phase==='research')finishPreparation();else startSpeech();});
+  $('try-again').addEventListener('click',()=>{beginPhase('speech');$('pause').focus({preventScroll:true});});
+  $('timer-close').addEventListener('click',()=>{
+    if(state.phase==='research'){finishPreparation();return;}
+    resetTimer();$('spin').focus({preventScroll:true});
+  });
+
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick();});
+  document.addEventListener('keydown',event=>{
+    if(event.repeat||event.ctrlKey||event.metaKey||event.altKey||event.isComposing||$('settings-dialog').open)return;
+    if(event.target.closest('input,select,textarea,button,a,[contenteditable="true"]'))return;
+    if(event.code==='Space'){event.preventDefault();spin();}else if(event.key==='Enter'){event.preventDefault();start();}
+  });
+  window.addEventListener('pagehide',()=>{stopClock();clearTimeout(state.drawTimeout);});
+  window.addEventListener('pageshow',event=>{if(!event.persisted)return;if(state.spinning){state.spinning=false;state.selected=false;$('topic-area').classList.remove('spinning');status('灵感就绪');updateButtons();}if(['research','speech'].includes(state.phase)&&!state.paused){tick();if(['research','speech'].includes(state.phase))state.interval=setInterval(tick,100);}});
+  persist();updateSettingControls();updateMode();
+})();
+
+</script>
+</body>
+</html>
