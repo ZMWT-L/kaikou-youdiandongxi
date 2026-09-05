@@ -30,6 +30,8 @@ install -m 644 "${SOURCE_DIR}/index.html" "${SITE_ROOT}/index.html"
 install -m 644 "${SOURCE_DIR}/styles.css" "${SITE_ROOT}/styles.css"
 install -m 644 "${SOURCE_DIR}/app.js" "${SITE_ROOT}/app.js"
 install -m 644 "${SOURCE_DIR}/topics.js" "${SITE_ROOT}/topics.js"
+install -d -m 755 "${SITE_ROOT}/audio"
+install -m 644 "${SOURCE_DIR}"/audio/*.wav "${SITE_ROOT}/audio/"
 
 cat > "${NGINX_SITE}" <<'NGINX'
 server {
@@ -52,7 +54,7 @@ server {
         add_header Cache-Control "no-cache";
     }
 
-    location ~* \.(?:css|js)$ {
+    location ~* \.(?:css|js|wav)$ {
         expires 10m;
         add_header Cache-Control "public, max-age=600";
     }
