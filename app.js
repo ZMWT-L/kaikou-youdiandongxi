@@ -9,60 +9,24 @@
   const clampMinutes = (value,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.max(1,Math.min(max,Math.round(value))) : fallback;
   const settings = {...defaults,speech:clampMinutes(saved.speech,10,1),research:clampMinutes(saved.research,60,10),sound:typeof saved.sound==='boolean'?saved.sound:true,category:TOPIC_CATEGORIES.some(c=>c.id===saved.category)?saved.category:'general',researchCategory:RESEARCH_CATEGORIES.some(c=>c.id===saved.researchCategory)?saved.researchCategory:'research-tech',mode:saved.mode==='research'?'research':'quick'};
   const state = {mode:settings.mode,topic:'',selected:false,spinning:false,phase:'idle',paused:false,remaining:0,total:0,deadline:0,preparationMinutes:10,speechMinutes:1,interval:null,drawTimeout:null,bag:[],bagKey:''};
-  let audioContext;
-  let audioResumePromise=null;
-  function primeAudio() {
-    if(!settings.sound)return Promise.resolve(false);
-    try{
-      const Audio=window.AudioContext||window.webkitAudioContext;
-      if(!Audio)return Promise.resolve(false);
-      if(!audioContext||audioContext.state==='closed')audioContext=new Audio();
-      if(audioContext.state==='running')return Promise.resolve(true);
-      if(!audioResumePromise){
-        audioResumePromise=audioContext.resume()
-          .then(()=>audioContext.state==='running')
-          .catch(()=>false)
-          .finally(()=>{audioResumePromise=null});
-      }
-      return audioResumePromise;
-    }catch{return Promise.resolve(false);}
-  }
+  const sounds={draw:$('draw-audio'),land:$('land-audio'),done:$('done-audio')};
+  Object.values(sounds).forEach(audio=>{audio.volume=.85;audio.load()});
   function persist() {
     try { localStorage.setItem(preferenceKey,JSON.stringify(settings)); }
     catch { storageAvailable = false; }
     $('storage-note').textContent = storageAvailable ? '设置会自动保存在当前浏览器。' : '当前浏览器无法保存设置；本次练习仍可正常使用。';
   }
-  function soundNow(kind='tick') {
-    if(!settings.sound||!audioContext||audioContext.state!=='running')return false;
-    const context=audioContext;
-    const notes=kind==='done'?[523.25,659.25,783.99]:kind==='land'?[523.25,659.25]:[440];
-    notes.forEach((frequency,index)=>{
-      const osc=context.createOscillator();const gain=context.createGain();
-      const start=context.currentTime+.02+index*.18;const duration=kind==='shuffle'||kind==='tick'?.07:.4;
-      osc.type='sine';osc.frequency.value=frequency;gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(kind==='shuffle'||kind==='tick'?.085:.16,start+.015);gain.gain.exponentialRampToValueAtTime(.001,start+duration);
-      osc.connect(gain);gain.connect(context.destination);osc.start(start);osc.stop(start+duration+.02);
-      osc.onended=()=>{osc.disconnect();gain.disconnect()};
-    });
-    return true;
-  }
-  async function tone(kind='tick') {
-    if (!settings.sound) return false;
+  async function playSound(kind='land') {
+    if(!settings.sound)return false;
     try {
-      let timeout;
-      const ready=await Promise.race([primeAudio(),new Promise((_,reject)=>{timeout=setTimeout(()=>reject(new Error('Audio blocked')),2000);})]);
-      clearTimeout(timeout);
-      if(!settings.sound)return false;
-      if(!ready||!audioContext||audioContext.state!=='running')throw new Error('Audio blocked');
-      return soundNow(kind);
+      const audio=sounds[kind]||sounds.land;
+      audio.pause();audio.currentTime=0;
+      await audio.play();
+      return true;
     } catch {
       $('sound-status').textContent='浏览器暂未允许播放声音，请点击“试听提示音”重试。';
       return false;
     }
-  }
-  for(const id of ['spin','start','pause','phase-next','try-again','sound-test']){
-    const control=$(id);
-    control.addEventListener('pointerdown',primeAudio,{passive:true});
-    control.addEventListener('touchstart',primeAudio,{passive:true});
   }
   function categories() {return state.mode==='research'?RESEARCH_CATEGORIES:TOPIC_CATEGORIES;}
   function categorySetting() {return state.mode==='research'?'researchCategory':'category';}
@@ -133,15 +97,15 @@
     state.spinning=true;state.selected=false;updateButtons();status('正在寻找灵感');$('topic-area').classList.remove('landed');$('topic-area').classList.add('spinning');$('topic-hint').textContent='让一个意想不到的话题，打开思路。';
     const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const result=nextTopic();const items=pool();let frame=0;const previews=reduced?[]:shuffle(items.filter(item=>item!==result)).slice(0,6);
-    tone();
+    playSound('draw');
     const draw=()=>{
       if(frame>=previews.length){
         setTopic(result);state.spinning=false;state.selected=true;status('你的表达话题');$('topic-area').classList.remove('spinning');$('topic-area').classList.add('landed');
         $('topic-hint').textContent=state.mode==='research'?'从一个问题出发，形成你自己的观点。':'没有标准答案，说说你的理解就好。';
-        state.drawTimeout=null;prepareRound();$('announcer').textContent='抽到的话题：'+result+'。点击开始准备后才会计时。';tone('land');
+        state.drawTimeout=null;prepareRound();$('announcer').textContent='抽到的话题：'+result+'。点击开始准备后才会计时。';
         requestAnimationFrame(()=>$('timer-panel').scrollIntoView({block:'nearest',behavior:reduced?'instant':'smooth'}));return;
       }
-      setTopic(previews[frame]);soundNow('shuffle');frame++;state.drawTimeout=setTimeout(draw,95);
+      setTopic(previews[frame]);frame++;state.drawTimeout=setTimeout(draw,95);
     };draw();
   }
   $('spin').addEventListener('click',spin);
@@ -157,10 +121,10 @@
   }
   $('settings-open').addEventListener('click',()=>{updateSettingControls();$('settings-dialog').showModal()});
   for(const [key,max] of [['speech',10],['research',60]])$(key+'-duration').addEventListener('input',event=>{settings[key]=clampMinutes(Number(event.target.value),max,defaults[key]);persist();updateSettingControls();});
-  $('sound').addEventListener('change',()=>{settings.sound=$('sound').checked;$('sound-test').disabled=!settings.sound;persist();if(settings.sound)tone('land');});
+  $('sound').addEventListener('change',()=>{settings.sound=$('sound').checked;$('sound-test').disabled=!settings.sound;persist();if(settings.sound)playSound('land');});
   $('sound-test').addEventListener('click',async()=>{
     $('sound-test').disabled=true;
-    const played=await tone('done');
+    const played=await playSound('done');
     if(played)$('sound-status').textContent='试听已播放。若没有听到，请调高媒体音量、关闭静音，或用系统浏览器打开。';
     $('sound-test').disabled=!settings.sound;
   });
@@ -209,7 +173,7 @@
       finishPreparation();
       return;
     }
-    state.phase='done';renderTimer();tone('done');
+    state.phase='done';renderTimer();playSound('done');
   }
   function tick() {
     if(state.paused||!['research','speech'].includes(state.phase))return;
@@ -230,15 +194,15 @@
   function finishPreparation() {
     if(state.phase!=='research')return;
     stopClock();state.phase='ready';state.paused=false;state.remaining=0;
-    renderTimer();tone('done');
+    renderTimer();playSound('done');
   }
   function startSpeech() {
     if(state.phase!=='ready')return;
-    beginPhase('speech');$('pause').focus({preventScroll:true});tone('land');
+    beginPhase('speech');$('pause').focus({preventScroll:true});playSound('land');
   }
   function togglePause() {
     if(!['research','speech'].includes(state.phase))return;
-    if(state.paused){state.paused=false;startClock();tone('land');}
+    if(state.paused){state.paused=false;startClock();playSound('land');}
     else {tick();if(!['research','speech'].includes(state.phase))return;state.paused=true;stopClock();}
     renderTimer();
   }
@@ -247,7 +211,7 @@
     if(state.phase==='research'){finishPreparation();return;}
     if(state.phase==='ready'){startSpeech();return;}
     if(state.phase==='speech'){togglePause();return;}
-    beginPhase(state.phase==='done'?'speech':'research');tone('land');
+    beginPhase(state.phase==='done'?'speech':'research');playSound('land');
   }
   $('start').addEventListener('click',start);
   $('pause').addEventListener('click',togglePause);
